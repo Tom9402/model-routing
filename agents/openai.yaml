@@ -1,0 +1,4 @@
+interface:
+  display_name: "模型分工"
+  short_description: "安装并检查跨项目模型分工，按任务难度委派经济模型并保留全局规则"
+  default_prompt: "使用 $model-routing 在本机安装并启用模型分工规则，保留现有全局指令。"
