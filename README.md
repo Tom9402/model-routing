@@ -7,7 +7,7 @@
 
 把下面这句话发给目标设备上的 Codex：
 
-> 请根据 [SKILL.md](https://github.com/Tom9402/model-routing/blob/main/SKILL.md)，安装并启用 model-routing。
+> 请根据 https://github.com/Tom9402/model-routing/blob/main/SKILL.md， 安装并启用 model-routing。
 
 无需手动下载文件。Codex 需要可访问 GitHub 和写入自身配置目录。
 
