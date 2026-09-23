@@ -125,7 +125,7 @@ foreach ($relative in $ManagedFiles) {
     if (-not $samePath -and ($null -eq $current -or $current -cne $desired)) { $changes += [pscustomobject]@{ Kind = "Skill file $relative"; Source = $source; Target = $target; Content = $desired } }
 }
 
-if ($changes.Count -eq 0) { Write-Output 'model-routing is already installed and current.'; return }
+if ($changes.Count -eq 0) { Write-Output 'model-routing is already installed and current. Global rules are enabled for new tasks; existing tasks may need to reload.'; return }
 if (-not $PSCmdlet.ShouldProcess($CodexHomePath, 'Install or update model-routing')) { return }
 
 $backupRoot = $null
@@ -145,3 +145,5 @@ foreach ($change in $changes) {
     Write-Output ("Updated " + $change.Kind)
 }
 if ($backupRoot) { Write-Output "Backed up replaced files to $backupRoot" }
+
+Write-Output 'Global dynamic model and reasoning-effort rules are enabled for new tasks. Existing tasks may need to reload; model access remains host-dependent.'
